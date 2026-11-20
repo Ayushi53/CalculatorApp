@@ -120,6 +120,7 @@ def initialize_database() -> None:
 
 @app.get("/api/health")
 def health() -> dict[str, str]:
+    print("Done with health Check")
     return {"status": "ok"}
 
 
@@ -138,7 +139,7 @@ def calculate(request: CalculationRequest) -> CalculationResponse:
             (request.expression, result, created_at),
         )
         calculation_id = cursor.lastrowid
-
+    print("Good work")
     return CalculationResponse(
         id=calculation_id,
         expression=request.expression,
