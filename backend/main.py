@@ -120,6 +120,7 @@ def initialize_database() -> None:
 
 @app.get("/api/health")
 def health() -> dict[str, str]:
+    print("Done with health Check")
     return {"status": "ok"}
 
 
