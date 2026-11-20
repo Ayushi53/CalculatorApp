@@ -139,7 +139,7 @@ def calculate(request: CalculationRequest) -> CalculationResponse:
             (request.expression, result, created_at),
         )
         calculation_id = cursor.lastrowid
-
+    print("Good work")
     return CalculationResponse(
         id=calculation_id,
         expression=request.expression,
